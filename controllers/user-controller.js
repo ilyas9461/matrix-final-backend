@@ -38,9 +38,9 @@ const addUser = async (req, res) => {
  *@route POST /api/auth/singin
  *@access public
  *@example request data
-     {
-        name: "ilyas",
-        email: "lhn2@gmail.com"
+    {
+        "email": "lhn2@gmail.com",
+        "password": "123456"
     }
 *@success data
     {
