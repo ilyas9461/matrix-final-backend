@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "4b31aee6-1543-4f48-b89f-5f69e7d7d491",
+		"name": "matrix-final-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25548388",
+		"_collection_link": "https://orange-desert-17215.postman.co/workspace/matrix-master-bootcamp~5f292ac6-81ca-468a-a2fd-a3d0331541ae/collection/25548388-4b31aee6-1543-4f48-b89f-5f69e7d7d491?action=share&source=collection_link&creator=25548388"
+	},
+	"item": [
+		{
+			"name": "addUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ilyas\",\r\n    \"email\": \"lhn2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"confirmPassword\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/auth/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/auth/signin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lhn2@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/auth/singin",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"auth",
+						"singin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/auth/logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4001/api/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"lhn2@gmail.com\",\r\n    \"role\": \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/del-user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"_id\": \"6810bb23babc4e3d642bbd12\",\r\n        \"name\": \"ilyas\",\r\n        \"email\": \"lhn2@gmail.com\",\r\n        \"createdAt\": \"2025-04-29T11:42:27.633Z\",\r\n        \"updatedAt\": \"2025-04-29T11:42:27.633Z\",\r\n        \"__v\": 0\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/del-user",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"del-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/update-user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": {\r\n        \"_id\": \"6810ccff4d0bc854ecd3ba51\",\r\n        \"name\": \"ilyas 123\",\r\n        \"email\": \"lhn2@gmail.com\",\r\n        \"password\": \"123456\",\r\n        \"confirmPassword\": \"123456\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/update-user",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"update-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
