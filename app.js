@@ -2,12 +2,14 @@ require('dotenv').config()                      // for .env file.
 const path = require('path')
 const express = require("express")
 const cookieParser = require('cookie-parser')
+const cors = require('cors')                   // Import the cors package
 
 const router = require('./routes/routes.js')
 
 require("./configs/mongoose.js")                // it makes a connection with mongoose in MongoDB database.
 
 const app = express()
+app.use(cors())                                 // Enable CORS for all routes
 app.use(cookieParser())
 
 // app.use(express.static('front-end'));
