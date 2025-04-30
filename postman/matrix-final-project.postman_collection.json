@@ -186,6 +186,148 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:4001/api/coffees/best-sellers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4001/api/coffees/best-sellers",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"coffees",
+						"best-sellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/coffees/all-coffees",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4001/api/coffees/all-coffees",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"coffees",
+						"all-coffees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/coffees/add-coffee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coffee\": {\r\n        \"name\": \"Turkish new coffee\",\r\n        \"description\": \"Floral and citrusy Single Origin coffee from Turkey.\",\r\n        \"price\": 10.99,\r\n        \"imageUrl\": \"\",\r\n        \"rating\": 4.9,\r\n        \"category\": \"Single Origin\",\r\n        \"bestSeller\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/coffees/add-coffee",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"coffees",
+						"add-coffee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/coffees/delete-coffee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6811f2f1ee619d4c5da79244\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/coffees/delete-coffee",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"coffees",
+						"delete-coffee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:4001/api/coffees/update-coffee",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"6811eaff3f197726782d1069\",\r\n    \"name\": \"Newe House Premium Blend\",\r\n    \"description\": \"A perfectly balanced blend of premium New Arabica beans.\",\r\n    \"price\": 12.99,\r\n    \"imageUrl\": \"\",\r\n    \"rating\": 4.6,\r\n    \"category\": \"Premium Blends\",\r\n    \"bestSeller\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4001/api/coffees/update-coffee",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"coffees",
+						"update-coffee"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

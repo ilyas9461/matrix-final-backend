@@ -15,7 +15,10 @@ const CoffeeModel = require('../models/coffee')
  */
 
 const addCoffee = (req, res) => {
-    const { ...coffee } = req.body;
+    const { coffee } = req.body;
+
+    // console.log(coffee);
+    
     if (coffee) {
         new CoffeeModel(coffee).save()
             .then(data => {
@@ -58,7 +61,9 @@ const getAllCoffees = (req, res) => {
 };
 
 const deleteCoffee = (req, res) => {
-    const { ..._id } = req.params; // Extract the _id from the request parameters
+    const { _id } = req.body; // Extract the _id from the request parameters
+
+    console.log(_id);    
 
     CoffeeModel.findByIdAndDelete(_id)
         .then(data => {
@@ -74,8 +79,11 @@ const deleteCoffee = (req, res) => {
 };
 
 const updateCoffee = (req, res) => {
-    const { ..._id } = req.params;
+    const { _id } = req.body
     const updateData = req.body;
+
+    console.log(_id);
+    
 
     CoffeeModel.findByIdAndUpdate(_id, updateData, { new: true, runValidators: true })
         .then(data => {
