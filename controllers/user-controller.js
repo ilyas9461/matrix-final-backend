@@ -58,13 +58,13 @@ const addUser = async (req, res) => {
 const login = async (req, res) => {
     const { email, password } = req.body
     if (!email || !password) {
-        return res.status(400).send({ error: 'Email and password are required' });
+        return res.status(400).send({ message: 'Email and password are required' });
     }
 
     UserModel.findOne({ email: email })
         .then(async user => {
             if (!user) {
-                const err = { error: 'User not found or invalid credentials' }
+                const err = { message: 'User not found or invalid credentials' }
                 console.error('Error finding user:', err);
                 return res.status(404).send(err);
             }
@@ -81,7 +81,7 @@ const login = async (req, res) => {
                     token
                 })
             }
-            res.status(401).send({ message: 'Invalid username or password' });
+            res.status(401).send({ error: 'Invalid username or password' });
         })
         .catch(err => {
             console.error('Error finding user:', err);
@@ -92,7 +92,7 @@ const login = async (req, res) => {
 const logout = (req, res) => {
     console.log('logoff user')
     res.clearCookie('token')
-    res.status(200).send({ data: "Logout successful..." })
+    res.status(200).send({ message: "Logout successful..." })
 }
 
 /**
@@ -130,7 +130,7 @@ const getAllUsers = (req, res) => {
             })
     }
     else {
-        res.status(500).send({ data: 'Admin role is necessary.' })
+        res.status(500).send({ message: 'Admin role is necessary.' })
     }
 }
 
@@ -196,7 +196,7 @@ const updateUser = (req, res) => {
     const { user } = req.body; // Destructure _id and other fields from the request body
 
     if (!user._id) {
-        return res.status(400).send({ error: 'Missing _id field in request body' });
+        return res.status(400).send({ message: 'Missing _id field in request body' });
     }
     const objectId = ObjectId.createFromHexString(user._id);
     UserModel.updateOne({ _id: objectId }, user).then(resData => {
